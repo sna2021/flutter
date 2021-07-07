@@ -14,6 +14,7 @@ class CocktailDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        //MARK:  Для соответствия дизайну нужно использовать transparent
         backgroundColor: Colors.black,
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
@@ -51,6 +52,7 @@ class CocktailDetailPage extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+             //MARK: Необходимо использовать Flexible
               Text(
                 '${cocktail.name}',
                 style: const TextStyle(color: Colors.white, fontSize: 24),
@@ -122,6 +124,7 @@ class CocktailDetailPage extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+           //MARK: Необходимо использовать Flexible
             Text(
               '${ingredientDefinition.ingredientName}',
               style: const TextStyle(
@@ -141,7 +144,6 @@ class CocktailDetailPage extends StatelessWidget {
         ),
       );
     });
-
     list.add(const SizedBox(
       height: 8,
     ));
@@ -151,6 +153,7 @@ class CocktailDetailPage extends StatelessWidget {
       width: double.infinity,
       padding: const EdgeInsets.only(left: 32, right: 36),
       child: Column(
+       //MARK: Можно просто передать children: list
         children: [
           ...list,
         ],
@@ -197,6 +200,7 @@ class CocktailDetailPage extends StatelessWidget {
       padding: EdgeInsets.only(left: 32),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        //MARK: Можно просто передать children: list
         children: [
           ...list,
         ],
@@ -227,6 +231,8 @@ class CocktailDetailPage extends StatelessWidget {
           ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
+            //MARK: Можно просто передать children: list
+            //MARK: Необходимо использовать Flexible
             children: [
               ...list,
             ],
@@ -268,7 +274,7 @@ class CocktailDetailPage extends StatelessWidget {
             color: Colors.black,
             borderRadius: BorderRadius.all(Radius.circular(30.0))),
       );
-
+  
   TextStyle _getStyleForInformaitonAboutCocktail(double fontSize) => TextStyle(
       fontSize: fontSize, fontWeight: FontWeight.w400, color: Colors.white);
 }
